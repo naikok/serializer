@@ -161,12 +161,9 @@ class ClassMetadata extends MergeableClassMetadata
         }
 
         if ($object->discriminatorFieldName && $this->discriminatorFieldName) {
-            throw new \LogicException(sprintf(
-                'The discriminator of class "%s" would overwrite the discriminator of the parent class "%s". Please define all possible sub-classes in the discriminator of %s.',
-                $object->name,
-                $this->discriminatorBaseClass,
-                $this->discriminatorBaseClass
-            ));
+            $this->discriminatorFieldName = $object->discriminatorFieldName;
+    	    $this->discriminatorMap = $object->discriminatorMap;
+    	    $this->discriminatorBaseClass = $object->discriminatorBaseClass;
         } elseif ( ! $this->discriminatorFieldName && $object->discriminatorFieldName) {
             $this->discriminatorFieldName = $object->discriminatorFieldName;
             $this->discriminatorMap = $object->discriminatorMap;
