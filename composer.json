@@ -1,6 +1,7 @@
 {
     "name": "jms/serializer",
     "type": "library",
+    "version": "5.0.1",
     "description": "Library for (de-)serializing data of any complexity; supports XML, JSON, and YAML.",
     "keywords": ["serialization", "deserialization", "json", "jaxb", "xml"],
     "homepage": "http://jmsyst.com/libs/serializer",
